@@ -1,0 +1,16 @@
+.menu{
+    background-color: #B8C47F;
+}
+
+.card{
+    border: 1px solid #646464;
+    padding: 10px 20px;
+    margin: 10px 20px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.card img{
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+}
