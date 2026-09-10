@@ -1,10 +1,20 @@
 .menu{
-    background-color: #B8C47F;
+    background-color: #7DB5B8;
+}
+
+.menu ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    list-style: none;
 }
 
 .card{
     border: 1px solid #646464;
-    padding: 10px 20px;
+    padding: 20px;
     margin: 10px 20px;
     width: 300px;
     border-radius: 10px;
@@ -14,3 +24,21 @@
     width: 100%;
     border-radius: 10px 10px 0px 0px;
 }
+
+.buttons-card{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    
+}
+
+.buttons-card .btn{
+    border-radius: 8px;
+    padding: 5px 10px;
+    background-color: #A1BDC9;
+    color:black
+}
+
+
