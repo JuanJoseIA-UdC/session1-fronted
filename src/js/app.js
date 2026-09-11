@@ -29,7 +29,7 @@
 
 const BASE_PATH_POKEMON_API = "https://pokeapi.co/api/v2/pokemon";
 
-const GET_POKEMONS = async(cantidad)=> {
+const GET_POKEMONS = async(cantidad) => {
     /* console.log(`${BASE_PATH_POKEMON_API}?limit=${cantidad}`) */
     const response = await fetch(`${BASE_PATH_POKEMON_API}?limit=${cantidad}`);
     const pokemons = await response.json();
@@ -39,23 +39,24 @@ const GET_POKEMONS = async(cantidad)=> {
 
     /* Acceder a un elemento especifico del HTML */
     const container = document.getElementById("pokemons-cards"); /* Forma tradicional (No es la forma en que la que ahora se maneja) */
-    
-    
+
+
     const container2 = document.querySelector(".pokemons-cards");
 
-    
+    pokemons.results.forEach(async(pokemon) => {
 
-    pokemons.results.forEach((pokemon) => {
-        console.log(pokemon);
+        const detailResponse = await fetch(pokemon.url);
+        const detail = await detailResponse.json();
+
         container2.innerHTML += `<div class="pokemon-card">
-            <h3>${pokemon.name}</h3>
-            <img src="" alt="">
-            <button class="btn">Ver mas</button>
-            </img>
-        </div>`;
+                                  <h3>${pokemon.name}</h3>
+                                  <h5></h5>
+                                  <img src="${detail.sprites.front_default}" alt="${pokemon.name}">
+                                  <button class="btn">Ver mas</button>
+                                </div>`;
     });
-    
+
+    /* en src es donde se mira donde 
+    mirar como se obtiene la url de cada pokemons para hacer el fetch */
+
 }
-
-
-
